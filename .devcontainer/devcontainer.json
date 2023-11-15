@@ -1,7 +1,7 @@
 {
   "name": "Python 3",
   "build": {
-    "dockerfile": "Dockerfile",
+    "dockerfile": "Dockerfile/Dockerfile",
     "context": "..",
     "args": { 
       "VARIANT": "3.8",
