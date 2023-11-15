@@ -1,12 +1,12 @@
 {
   "name": "Python 3",
   "build": {
-    "dockerfile": "Dockerfile",
+    "dockerfile": "Dockerfile/Dockerfile",
     "context": "..",
     "args": { 
       "VARIANT": "3.8",
       "INSTALL_NODE": "false"
-    } 
+    }
   },
   "runArgs": [
     "--network",
@@ -14,10 +14,17 @@
   ],
   "customizations": {
     "vscode": {
+      "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash"
+      },
       "extensions": [
-        "github.copilot",
-        "github.copilot-chat"
+        "ms-python.python",
+        "ms-toolsai.jupyter",
+        "github.copilot-chat",
+        "github.copilot"
       ]
     }
-  }
+  },
+  "forwardPorts": [8888],
+  "postCreateCommand": "pip install -r requirements.txt"
 }
